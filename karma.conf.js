@@ -8,16 +8,28 @@ module.exports = function(config) {
 
     // testing framework to use (jasmine/mocha/qunit/...)
     frameworks: ['jasmine'],
+  
 
     // list of files / patterns to load in the browser
     files: [
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
+      'app/bower_components/jquery/jquery.js',
       'app/scripts/*.js',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
-      'test/spec/**/*.js'
+      'test/spec/**/*.js',
+      'app/bower_components/angular-ui-router/release/angular-ui-router.js'
     ],
+
+       //Add preprocessors,
+    preprocessors: {
+      'app/views/**/*.html': 'html2js'
+    },
+
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'app/' // strip app from the file path
+    },
 
     // list of files / patterns to exclude
     exclude: [],
@@ -49,4 +61,6 @@ module.exports = function(config) {
     // if true, it capture browsers, run tests and exit
     singleRun: false
   });
+
+
 };

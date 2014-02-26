@@ -3,7 +3,7 @@
 describe('Directive: dvColor', function () {
 
   // load the directive's module
-  beforeEach(module('teamTmntAppApp'));
+  beforeEach(module('teamTmntApp'));
 
   var element,
     scope;
@@ -13,8 +13,10 @@ describe('Directive: dvColor', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<dv-color></dv-color>');
+    element = angular.element('<div dv-color="blue">text</div>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the dvColor directive');
+    scope.$digest();
+
+    expect(element.css('color')).toBe('blue');
   }));
 });

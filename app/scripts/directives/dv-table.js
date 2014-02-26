@@ -3,7 +3,7 @@
 angular.module('teamTmntApp')
   .directive('dvTable', function () {
     return {
-      templateUrl: '../views/directives/table-view.html',
+      templateUrl: 'views/directives/table-view.html',
       restrict: 'A',
       scope: {
       	dvTable: '=',

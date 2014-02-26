@@ -3,7 +3,7 @@
 describe('Service: TurtleService', function () {
 
   // load the service's module
-  beforeEach(module('teamTmntAppApp'));
+  beforeEach(module('teamTmntApp'));
 
   // instantiate service
   var TurtleService;
